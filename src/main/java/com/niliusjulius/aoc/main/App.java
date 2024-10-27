@@ -1,6 +1,6 @@
 package com.niliusjulius.aoc.main;
 
-import com.niliusjulius.aoc.days.Day01;
+import com.niliusjulius.aoc.days.*;
 import com.niliusjulius.aoc.util.Downloader;
 
 import java.io.OutputStream;
@@ -26,7 +26,12 @@ public class App {
             new Downloader(sessionId).downloadInputs(year);
         } else {
             Instant start = Instant.now();
-            exec(new DisplayData(1, "Day 1 example", Day01::main));
+            exec(new DisplayData(1, "Not Quite Lisp", Day01::main));
+            exec(new DisplayData(2, "I Was Told There Would Be No Math", Day02::main));
+            exec(new DisplayData(3, "Perfectly Spherical Houses in a Vacuum", Day03::main));
+            exec(new DisplayData(4, "The Ideal Stocking Stuffer", Day04::main));
+            exec(new DisplayData(5, "Doesn't He Have Intern-Elves For This?", Day05::main));
+            exec(new DisplayData(6, "Probably a Fire Hazard", Day06::main));
             Instant end = Instant.now();
             System.out.println("so far:\t" + Duration.between(start, end).toMillis() + " ms...");
         }
